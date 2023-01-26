@@ -17,3 +17,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         verbose_name="Usuário está ativo",
         default=True,
     )
+
+    is_staff = models.BooleanField(
+        verbose_name="Usuário é da equipe de desenvolvimento",
+        default=False,
+    ) 
