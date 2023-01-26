@@ -12,3 +12,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         max_length=194,
         unique=True,
     )
+
+    is_active = models.BooleanField(
+        verbose_name="Usuário está ativo",
+        default=True,
+    )
