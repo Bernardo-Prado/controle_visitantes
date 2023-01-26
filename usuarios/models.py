@@ -22,3 +22,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         verbose_name="Usuário é da equipe de desenvolvimento",
         default=False,
     ) 
+
+    is_superuser = models.BooleanField(
+       verbose_name="Usuário é um super usuário",
+       default=False,
+    )
