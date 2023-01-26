@@ -27,3 +27,5 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
        verbose_name="Usuário é um super usuário",
        default=False,
     )
+
+    USERNAME_FIELD = "email"
