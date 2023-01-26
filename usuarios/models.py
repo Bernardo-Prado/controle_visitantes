@@ -29,3 +29,11 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     )
 
     USERNAME_FIELD = "email"
+
+    class Meta:
+        verbose_name = "Usuário"
+        verbose_name_plural = "Usuários"
+        db_table = "usuario"
+
+    def __str__(self):
+        return self.email
