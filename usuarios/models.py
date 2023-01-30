@@ -5,6 +5,23 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
+class UsuarioManager(BaseUserManager):
+
+    def create_user(self, email, password=None):
+        usuario = self.model(
+            email=self.normalize_email(email)
+        )
+
+        usuario.is_active = True
+        usuario.is_staff = False
+        usuario.is_superuser = False
+
+        if password:
+            usuario.set_password(password)
+
+            usuario.save()
+
+            return usuario
 class Usuario(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
