@@ -22,6 +22,22 @@ class UsuarioManager(BaseUserManager):
             usuario.save()
 
             return usuario
+
+    def create_superuser(self, email, password):
+        usuario = self.create_user(
+            email=self.normalize_email(email),
+            password=password,
+        )
+
+        usuario.is_active = True
+        usuario.is_staff = True
+        usuario.is_superuser = True
+
+        usuario.set_password(password)
+
+        usuario.save()
+
+        return usuario
 class Usuario(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
