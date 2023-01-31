@@ -15,3 +15,9 @@ class Porteiro(models.Model):
         verbose_name="Telefone de contato",
         max_length=11,
     )
+
+    data_nascimento = models.DateField(
+        verbose_name="Data de nascimento",
+        auto_now_add=False,
+        auto_now=False,
+    )
