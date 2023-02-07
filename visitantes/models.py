@@ -7,4 +7,9 @@ class Visitantes(models.Model):
         max_length=194
     )
 
+    cpf = models.CharField(
+        verbose_name="CPF",
+        max_length=11
+    )
+
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
