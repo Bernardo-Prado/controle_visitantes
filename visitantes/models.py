@@ -12,4 +12,10 @@ class Visitantes(models.Model):
         max_length=11
     )
 
+    data_de_nascimento = models.DateField(
+        verbose_name="Data de nascimneto",
+        auto_now_add=False,
+        auto_now=False,
+    )
+
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
