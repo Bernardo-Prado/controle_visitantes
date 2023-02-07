@@ -1,6 +1,6 @@
 from django.db import models
 
-class Visitantes(models.Model):
+class Visitante(models.Model):
 
     nome_completo = models.CharField(
         verbose_name="Nome Completo",
