@@ -18,4 +18,10 @@ class Visitantes(models.Model):
         auto_now=False,
     )
 
+    # O positive serve para armazenar valores positivos pequenos
+    numero_casa = models.PositiveSmallIntegerField(
+        verbose_name="Número da casa a ser visitada",
+    )
+
+
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
