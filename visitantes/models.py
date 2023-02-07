@@ -31,4 +31,15 @@ class Visitantes(models.Model):
         null=True,
     )
 
+    horario_chegada = models.DateTimeField(
+        verbose_name="Horário de chegada na portaria",
+        auto_now_add=True,
+    )
+
+    horario_saida = models.DateTimeField(
+        verbose_name="Horário de saída do condomínio",
+        auto_now=False,
+        blank=True,
+        null=True,
+    )
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
