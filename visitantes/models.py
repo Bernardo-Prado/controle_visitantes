@@ -42,4 +42,11 @@ class Visitantes(models.Model):
         blank=True,
         null=True,
     )
+
+    horario_autorizacao = models.DateTimeField(
+        verbose_name="Horário de autorização de entrada",
+        auto_now=False,
+        blank=True,
+        null=True,
+    )
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
