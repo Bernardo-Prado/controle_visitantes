@@ -49,4 +49,10 @@ class Visitantes(models.Model):
         blank=True,
         null=True,
     )
+
+    morador_responsavel = models.CharField(
+        verbose_name="Nome do morador responsável por autorizar a entrada do visitante",
+        max_length=194,
+        blank=True,
+    )
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
