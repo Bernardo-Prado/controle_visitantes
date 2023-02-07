@@ -55,4 +55,18 @@ class Visitantes(models.Model):
         max_length=194,
         blank=True,
     )
+
+    registrado_por = models.ForeignKey(
+        "porteiros.Porteiro",
+        verbose_name="Porteiro responsável pelo registro",
+        on_delete=models.PROTECT
+    )
+
+    class Meta:
+        verbose_name = "Visitante",
+        verbose_name_plural = "Visitantes",
+        db_table = "visitante"
+
+    def __str__(self):
+        return self.nome_completo
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
