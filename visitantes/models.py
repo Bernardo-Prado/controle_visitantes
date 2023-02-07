@@ -23,5 +23,12 @@ class Visitantes(models.Model):
         verbose_name="Número da casa a ser visitada",
     )
 
+    # Pode ser nulo ou em branco, caso o visitante não tenha veiculo
+    placa_veiculo = models.CharField(
+        verbose_name="Placa de veículo",
+        max_length=7,
+        blank=True,
+        null=True,
+    )
 
 # nome completo, cpf, data de nascimento, número da casa, placa do veiculo, horario de entrada-saida-autorização, nome de quem autorizou, nome do responsável pelo registro
