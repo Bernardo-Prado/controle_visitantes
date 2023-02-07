@@ -13,7 +13,7 @@ class Visitante(models.Model):
     )
 
     data_de_nascimento = models.DateField(
-        verbose_name="Data de nascimneto",
+        verbose_name="Data de nascimento",
         auto_now_add=False,
         auto_now=False,
     )
