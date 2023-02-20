@@ -19,6 +19,19 @@
                     O asterisco (*) indica que o campo é obrigatório
                 </small>
             </p>
+
+            {% if form.errors %}
+                {% for field in form %}
+                    {% if field.errors %}
+                        {% for erro in field.errors %}
+                            <div class="alert alert-warning" role="alert">
+                                {{ erro }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
             <!-- O "csrf_token" protege nossa aplicação contra requisições externas -->
             <form method="post">
                 <div class="form-row">
