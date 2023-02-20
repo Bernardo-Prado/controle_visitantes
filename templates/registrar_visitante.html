@@ -19,6 +19,19 @@
                     O asterisco (*) indica que o campo é obrigatório
                 </small>
             </p>
+
+            {% if form.errors %}
+                {% for field in form %}
+                    {% if field.errors %}
+                        {% for erro in field.errors %}
+                            <div class="alert alert-warning" role="alert">
+                                {{ erro }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
             <!-- O "csrf_token" protege nossa aplicação contra requisições externas -->
             <form method="post">
                 <div class="form-row">
@@ -30,6 +43,11 @@
                             {% render_field field placeholder=field.label class="form-control" %}
                         </div>
                     {% endfor %}
+                </div>
+                <div class="text-right" style="padding: 10px;">
+                    <button class="btn btn-primary" type="submit">
+                        <span class="text">Registrar visitante</span>
+                    </button>
                 </div>
             </form>
         </div>
