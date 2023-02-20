@@ -68,7 +68,7 @@ class Visitante(models.Model):
 
         return "Horário de saída não registrado"
 
-    def get_horario_autorização(self):
+    def get_horario_autorizacao(self):
         if self.horario_autorizacao:
             return self.horario_autorizacao
 
