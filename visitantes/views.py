@@ -53,7 +53,11 @@ def informacoes_visitante(request, id):
         )
 
         if form.is_valid():
-            form.save()
+            visitante = form.save(commit=False)
+
+            visitante.status = "EM_VISITA"
+
+            visitante.save()
 
             messages.success(
                 request,
